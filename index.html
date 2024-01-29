@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" id="themeStlye" href="light-styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Start Me</h1>
+      <div class="btnContainer">
+        <button class="btn" onclick="start()">Start</button>
+      </div>
+      <br />
+      <div class="dice">
+        <p>🧔 Player 1</p>
+        <img id="img1" class="img1" src="./images/dice6.png" />
+      </div>
+
+      <div class="dice">
+        <p>🙎 Player 2</p>
+        <img class="img2" src="./images/dice6.png" />
+      </div>
+    </div>
+    <div class="absolute toggle">
+      <p class="theme" onclick="themeSwitch()">light 🌞</p>
+    </div>
+  </body>
+  <script>
+    function start() {
+      //<!-- ! Random Number Generator 👇! -->
+      document.querySelector(".btn").textContent = "New Game ..";
+      document.querySelector("button").style.background = "gray";
+      var Num1 = Math.floor(Math.random() * 6) + 1;
+      document
+        .querySelector(".img1")
+        .setAttribute("src", `./images/dice${Num1}.png`);
+      //<!-- ! Random Number Generator 👇! -->
+      var Num2 = Math.floor(Math.random() * 6) + 1;
+      var img1 = document.querySelector(".img2");
+      img1.setAttribute("src", `./images/dice${Num2}.png`);
+
+      //<!--* Change Tilte in Heading ✨ *  -->
+      var heading = document.querySelector("h1");
+      if (Num1 > Num2) {
+        heading.innerText = "🧔 Player 1 Won 🏳️";
+      } else if (Num1 < Num2) {
+        heading.innerText = "🙎 Player 2 Won 🏳️";
+      } else if (Num1 == Num2) {
+        heading.innerText = "Draw 🧛 ";
+      } else {
+        heading.innerText = "Refresh me 🔃";
+      }
+    }
+
+    function themeSwitch() {
+      const switcher = document.querySelector(".theme");
+
+      if (switcher.textContent.includes("light 🌞")) {
+        switcher.textContent = "Dark 🌑";
+        document.querySelector("body").style.background = "white";
+      } else if (switcher.textContent.includes("Dark 🌑")) {
+        switcher.textContent = "light 🌞";
+        document.querySelector("body").style.background = "black";
+      }
+    }
+  </script>
+</html>

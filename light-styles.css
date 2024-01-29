@@ -1,0 +1,66 @@
+.container {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+}
+
+body {
+  background-color: black;
+}
+
+h1 {
+  margin: 30px;
+  padding-bottom: 60px;
+  font-family: cursive;
+  text-shadow: 5px 0 #333333ea;
+  filter: drop-shadow(5px 0px #ffffff7c);
+  font-size: 6rem;
+  color: #1be3f1;
+}
+
+p {
+  font-size: 2rem;
+  color: gray;
+  font-family: "Indie Flower", cursive;
+}
+.btn {
+  text-align: center;
+  background: #1be3f1;
+  padding: 8px 18px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 25px;
+}
+.btnContainer{
+  height: 5rem;
+}
+.btn:active {
+  color: #ffffff;
+  border: 5px solid white;
+  scale: 82%;
+}
+img {
+  width: 80%;
+  filter: hue-rotate(180deg);
+}
+.absolute {
+  position: absolute;
+}
+.theme {
+  font-size: 18px;
+  cursor: pointer;
+  border: 2px solid;
+  padding: 4px 12px;
+  border-radius: 18px;
+}
+.toggle {
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
